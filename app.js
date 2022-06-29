@@ -13,7 +13,7 @@ mongoose.connect(process.env.MONGO_URL,
         console.log("Mongo Connected")
 });
 
-app.use('/user', userRouter)
+app.use('/user', express.json(), userRouter)
 
 app.listen(process.env.PORT, () => {
     console.log("Server Runing");
